@@ -43,27 +43,14 @@ final/
 
 ## 설치 방법
 
-### 1. 저장소 클론
-```bash
-git clone https://github.com/yourusername/football-ai.git
-cd football-ai/final
-```
-
-### 2. 가상 환경 생성
-```bash
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# 또는
-venv\Scripts\activate     # Windows
-```
-
-### 3. 의존성 설치
+###  패키지 설치
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. 모델 가중치 다운로드
+###  모델 가중치 다운로드
 
+https://drive.google.com/drive/folders/1V9teQbgAZoVSZyxCAjj55wy8ZgsNbFyS?usp=drive_link
 다음 모델 파일들을 `models/` 디렉토리에 배치하세요:
 
 | 모델 | 파일명 | 설명 |
@@ -74,10 +61,6 @@ pip install -r requirements.txt
 | Re-ID | `osnet_x0_25_msmt17.pt` | 선수 재식별용 OSNet 모델 |
 | 패스 성공 | `pass_success_model.pkl` | 학습된 패스 성공 예측기 |
 
-### 5. 데이터 파일 준비
-
-xT 그리드 파일을 `data/` 디렉토리에 배치하세요:
-- `xt_grid.npy` - 사전 계산된 Expected Threat 그리드
 
 ## 사용법
 

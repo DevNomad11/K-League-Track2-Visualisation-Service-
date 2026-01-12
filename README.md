@@ -146,4 +146,15 @@ K리그 이벤트 데이터로 학습:
 ### Expected Threat (xT)
 각 위치에서 득점 확률을 계산하는 그리드 기반 모델 (16x12 존).
 
+### 라이센스 정보
 
+## AGPL-3.0 Licensed
+- **Ultralytics YOLO** - https://github.com/ultralytics/ultralytics
+- **BoxMOT** - https://github.com/mikel-brostrom/boxmot
+
+## Apache-2.0 Licensed
+- **SigLIP (google/siglip-base-patch16-224)** - https://huggingface.co/google/siglip-base-patch16-224
+- **Transformers** - https://github.com/huggingface/transformers
+
+## MIT Licensed
+- **Supervision** - https://github.com/roboflow/supervision

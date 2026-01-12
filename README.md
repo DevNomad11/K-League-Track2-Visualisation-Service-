@@ -116,15 +116,6 @@ python inference.py \
     -i input/match.mp4 \
     --dynamic-voronoi \
     --pass-xt-v11 \
-    --show-traces
-```
-
-### 3. 강건한 공 추적
-```bash
-python inference.py \
-    -i input/match.mp4 \
-    --robust-ball-tracking \
-    --show-trajectory
 ```
 
 ## 기술 세부사항
@@ -155,13 +146,4 @@ K리그 이벤트 데이터로 학습:
 ### Expected Threat (xT)
 각 위치에서 득점 확률을 계산하는 그리드 기반 모델 (16x12 존).
 
-## 라이선스
 
-MIT 라이선스 - 자세한 내용은 LICENSE 파일 참조.
-
-## 감사의 글
-
-- [Ultralytics YOLO](https://github.com/ultralytics/ultralytics)
-- [Supervision](https://github.com/roboflow/supervision)
-- [BoxMOT](https://github.com/mikel-brostrom/boxmot)
-- [SigLIP](https://huggingface.co/google/siglip-base-patch16-224)

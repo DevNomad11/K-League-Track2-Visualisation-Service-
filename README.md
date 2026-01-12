@@ -69,18 +69,6 @@ https://drive.google.com/drive/folders/1V9teQbgAZoVSZyxCAjj55wy8ZgsNbFyS?usp=dri
 python inference.py -i input/video.mp4
 ```
 
-### 전체 옵션
-```bash
-python inference.py \
-    -i input/video.mp4 \
-    -o output/result.mp4 \
-    --voronoi-frame \
-    --dynamic-voronoi \
-    --pass-success \
-    --pass-xt \
-    --pass-xt-v11 \
-    --device 0
-```
 
 ### 명령줄 인자
 
@@ -98,25 +86,30 @@ python inference.py \
 | `--no-minimap` | flag | False | 2D 전술 미니맵 비활성화 |
 | `--no-cmc` | flag | False | 카메라 모션 보정 비활성화 |
 | `--no-reid` | flag | False | Re-ID 기능 비활성화 |
-| `--show-traces` | flag | False | 이동 궤적 표시 |
+| `--show-traces` 
 | `--robust-ball-tracking` | flag | False | 칼만 필터 공 추적 활성화 |
 | `--conf-player` | float | 0.25 | 선수 감지 신뢰도 |
 | `--conf-ball` | float | 0.07 | 공 감지 신뢰도 |
+| `--team-0-attacks-left` | flag | False | 팀 0이 왼쪽→오른쪽 공격 |
+| `--team-0-attacks-right` | flag | False | 팀 0이 오른쪽→완쪽 공격 |
+
+
 
 ## 예제
 
-### 1. 프레임에 보로노이 오버레이
-```bash
-python inference.py -i input/match.mp4 --voronoi-frame
-```
-
-### 2. 모든 기능 활성화
+### 데모 버전) 모든 기능 활성화
 ```bash
 python inference.py \
-    -i input/match.mp4 \
+    --input sample_1.mp4 \
     --dynamic-voronoi \
     --pass-xt-v11 \
+    --team-0-attacks-left
 ```
+
+팀 공격 방향은 영상별로 수동으롷 설정해야 합니다.
+Sample_1.mp4: --team-0-attacks-left
+Sample_2.mp4: --team-0-attacks-right
+Sample_3.mp4: --team-0-attacks-left
 
 ## 기술 세부사항
 
@@ -130,7 +123,7 @@ python inference.py \
 - 코너 포인트, 페널티 에어리어 코너, 골 에어리어 코너
 - 센터 서클 포인트, 페널티 스팟, 센터 스팟
 
-### 동적 보로노이
+### 동적 보로노이 (Dynamic Pitch Control)
 정적 보로노이(거리 기반)와 달리 동적 보로노이는 다음을 고려:
 - 선수 현재 위치
 - 선수 속도 벡터
@@ -141,7 +134,7 @@ python inference.py \
 K리그 이벤트 데이터로 학습:
 - 시작/종료 좌표
 - 패스 거리 및 각도
-- 로지스틱 회귀 분류기
+- XGBoost
 
 ### Expected Threat (xT)
 각 위치에서 득점 확률을 계산하는 그리드 기반 모델 (16x12 존).

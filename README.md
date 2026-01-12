@@ -111,6 +111,12 @@ python inference.py \
 - Sample_2.mp4: --team-0-attacks-right
 - Sample_3.mp4: --team-0-attacks-left
 
+## 시연 영상
+- Sample_1.mp4: https://www.youtube.com/watch?v=v_p0nuirmdA
+- Sample_2.mp4: https://www.youtube.com/watch?v=oGbYmQ4Kr9s
+- Sample_3.mp4: https://www.youtube.com/watch?v=uSIDer_HNzM
+
+
 ## 기술 세부사항
 
 ### 좌표계

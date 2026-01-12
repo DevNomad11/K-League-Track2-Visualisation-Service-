@@ -106,10 +106,10 @@ python inference.py \
     --team-0-attacks-left
 ```
 
-팀 공격 방향은 영상별로 수동으롷 설정해야 합니다.
-Sample_1.mp4: --team-0-attacks-left
-Sample_2.mp4: --team-0-attacks-right
-Sample_3.mp4: --team-0-attacks-left
+팀 공격 방향은 영상별로 수동으로 설정해야 합니다.
+- Sample_1.mp4: --team-0-attacks-left
+- Sample_2.mp4: --team-0-attacks-right
+- Sample_3.mp4: --team-0-attacks-left
 
 ## 기술 세부사항
 
